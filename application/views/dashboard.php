@@ -29,7 +29,7 @@
 	<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
 		<div class="row">
 			<ol class="breadcrumb">
-				<li><a href="<?php base_url();?>dashboard"><span class="glyphicon glyphicon-home"> Home</span></a></li>
+				<li><a href="<?php base_url();?>dashboard"><span class="glyphicon glyphicon-home"> Home <?php echo $this->session->userdata('user', 'nama'); ?> </span></a></li>
 				<li class="active"><?php echo $title; ?></li>
 			</ol>
 		</div><!--/.row-->

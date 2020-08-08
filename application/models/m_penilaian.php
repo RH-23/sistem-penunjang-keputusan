@@ -119,7 +119,7 @@ class m_penilaian extends CI_Model {
         return $result->result_array();
 	}
 
-    /*funngsi add nilai*/
+    /*fungsi add nilai*/
    	function add($data){
     	$this->db->insert('tb_nilai', $data);
     	return true;
