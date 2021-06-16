@@ -26,7 +26,11 @@
 				</a>
 			</li>
 			<li class="<?php if($this->uri->segment(1)=="nilai"){echo "active";}?>">
-				<a href="<?php base_url();?>nilai"><span class="glyphicon glyphicon-list-alt"></span> Nilai / Proses SPK
+				<a href="<?php base_url();?>nilai"><span class="glyphicon glyphicon-list-alt"></span> Proses SPK SAW
+				</a>
+			</li>
+			<li class="<?php if($this->uri->segment(1)=="nilai_wp"){echo "active";}?>">
+				<a href="<?php base_url();?>nilai_wp"><span class="glyphicon glyphicon-list-alt"></span> Proses SPK WP
 				</a>
 			</li>
 		</ul>

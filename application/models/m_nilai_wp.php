@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class m_nilai extends CI_Model {
+class m_nilai_wp extends CI_Model {
 
 	/*variabel yang memiliki tabel puskesmas*/
 	var $table = 'tb_nilai';

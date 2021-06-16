@@ -12,7 +12,7 @@ class Nilai extends CI_Controller {
 
 	public function index()
 	{
-		$data['title']				= 'Proses Penilaian SPK';
+		$data['title']				= 'Proses SPK SAW';
 		$data['content']		 	= 'data/v_nilai';
 		$data['nilai']				= $this->m_nilai->get_penilaianpuskesmas();
 		$data['jmlk_ling']			= $this->m_nilai->get_jmlk_ling();

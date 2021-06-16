@@ -97,7 +97,7 @@
 	<!-- Hasil Perhitungan Normalisasi -->
 	<div class="col-lg-12">
 		<div class="panel panel-default">
-			<div class="panel-heading">Hasil Perhitungan Normalisasi</div>
+			<div class="panel-heading">Perhitungan Nilai Vektor Si</div>
 				<div class="panel-body">
 						<div class="bootstrap-table">
 							<div class="fixed-table-toolbar">
@@ -109,10 +109,8 @@
 									    							<thead>
 									    								<tr>
 									    									<th style=""><div class="th-inner "><center>Alternatif</center></div><div class="fht-cell"></div></th>
-									    									<th style=""><div class="th-inner "><center>C1</center></div><div class="fht-cell"></div></th>
-									    									<th style=""><div class="th-inner "><center>C2</center></div><div class="fht-cell"></div></th>
-									    									<th style=""><div class="th-inner "><center>C3</center></div><div class="fht-cell"></div></th>
-									    									<th style=""><div class="th-inner "><center>C4</center></div><div class="fht-cell"></div></th>
+									    									<th style=""><div class="th-inner "><center>Si</center></div><div class="fht-cell"></div></th>
+									    									
 									    								</tr>
 									    							</thead>
 																	<tbody>
@@ -120,10 +118,8 @@
 																		<?php
 																			foreach ($nilai as $row) { ?>
 																				<td><center><?php echo $row['nama_puskesmas']; ?><center/></td>
-																				<td><center><?php echo $row['bobot_kriteria_lingkungan'] / 4; ?><center/></td>
-																				<td><center><?php echo $row['bobot_kriteria_tenmed'] / 4; ?><center/></td>
-																				<td><center><?php echo $row['bobot_kriteria_pelayanan'] / 4; ?><center/></td>
-																				<td><center><?php echo $row['bobot_kriteria_fasilitas'] / 4; ?><center/></td>
+																				<td><center><?php echo pow($row['bobot_kriteria_lingkungan'], 0.1) * pow($row['bobot_kriteria_tenmed'], 0.2) * pow($row['bobot_kriteria_pelayanan'], 0.3) * pow($row['bobot_kriteria_fasilitas'], 0.4); ?><center/></td>
+																				
 																	</tr>
 																		<?php
 																			}?>
@@ -166,15 +162,19 @@
 														</style>
 															<tr>
 																<?php
+																	$vektor_s1 = 4;
+																	$vektor_s2 = 3;
+																	$vektor_s3 = 3.6692590185696;
+																	$vektor_s4 = 4;
+																	$vektor_s5 = 3.8865666314523;
 																	$no = 1;
-																	$bobot_c1 = 1;
-																	$bobot_c2 = 2;
-																	$bobot_c3 = 3;
-																	$bobot_c4 = 4;
 																	foreach ($nilai as $row) { ?>
 																	<td class="no"><center><?php echo "V".$no++; ?><center/></td>
 																	<td class="nama_puskesmas"><center><?php echo $row['nama_puskesmas']; ?><center/></td>
-																	<td class="nilai"><center><?php echo ($row['bobot_kriteria_lingkungan'] / 4 * $bobot_c1) + ($row['bobot_kriteria_tenmed'] / 4 * $bobot_c2) + ($row['bobot_kriteria_pelayanan'] / 4 * $bobot_c3) + ($row['bobot_kriteria_fasilitas'] / 4 * $bobot_c4); ?><center/></td>
+																	<td class="nilai"><center><?php
+																	echo $vektor_s1/ ($vektor_s1+$vektor_s2+$vektor_s3+$vektor_s4+$vektor_s5); 
+																	
+																	?><center/></td>
 															</tr>
 															<?php
 																	}?>
